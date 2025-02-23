@@ -1,9 +1,21 @@
-import Image from "next/image";
+import React from "react";
+import { getAnimeResponse } from "./libs/api-libs";
+import MangaList from "@/components/MangaList";
+import Header from "@/components/MangaList/Header";
 
-export default function Home() {
+const Home = async () => {
+  const topManga = await getAnimeResponse("top/manga", "limit=8");
+
   return (
-    <div className="">
-      <h1>Ini adalah halaman utama</h1>
+    <div className="p-2">
+      <Header
+        title={"Top Manga"}
+        linkHref={"/popular"}
+        linkTitle={"Lihat semua"}
+      />
+      <MangaList api={topManga} />
     </div>
   );
-}
+};
+
+export default Home;
