@@ -10,7 +10,7 @@ const Search = async({params}) => {
 
   return (
     <>
-    <section>
+    <section className='p-2'>
         <Header title={`Pencarian untuk ${decodeKeyword}`} />
         <MangaList api={searchManga} />
     </section>

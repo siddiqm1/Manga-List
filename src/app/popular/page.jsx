@@ -19,7 +19,7 @@ const Popular = () => {
   }, [page]);
 
   return (
-    <div className="">
+    <div className="p-2">
       <HeaderMenu title={`Manga Terpopular #${page}`} />
       <MangaList api={topManga} />
       <Pagination
