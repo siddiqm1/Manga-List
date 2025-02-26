@@ -3,3 +3,8 @@ export const getAnimeResponse = async(resource, query) => {
     const data = await response.json()
     return data
 }
+
+export const getNestedAnimeResponse = async(resource, objectProperty) => {
+    const response = await getAnimeResponse(resource)
+    return response.data.flatMap(item => item.entry)
+}

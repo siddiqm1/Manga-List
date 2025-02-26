@@ -1,4 +1,4 @@
-import { getAnimeResponse } from "@/app/libs/api-libs";
+import { getAnimeResponse } from "@/libs/api-libs";
 import Image from "next/image";
 import React from "react";
 
@@ -43,7 +43,9 @@ const Manga = async ({ params: { id } }) => {
               height={350}
               alt={manga.data.images.jpg.image_url}
             />
-              <p className="px-4 py-3 text-justify lg:text-xl lg:max-w-2xl">{manga.data.synopsis}</p>
+            <p className="px-4 py-3 text-justify lg:text-xl lg:max-w-2xl">
+              {manga.data.synopsis}
+            </p>
           </div>
         </section>
       </main>
