@@ -4,7 +4,7 @@ import React from "react";
 
 const MangaList = ({ api }) => {
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
       {api.data?.map((manga, index) => {
         return (
           <div className="bg-white rounded-lg overflow-hidden shadow-lg" key={index}>
