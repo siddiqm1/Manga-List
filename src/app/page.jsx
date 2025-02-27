@@ -1,5 +1,5 @@
 import React from "react";
-import { getAnimeResponse, getNestedAnimeResponse } from "../libs/api-libs";
+import { getAnimeResponse, getNestedAnimeResponse, reproduce } from "../libs/api-libs";
 import MangaList from "@/components/MangaList";
 import Header from "@/components/MangaList/Header";
 
@@ -9,7 +9,7 @@ const Home = async () => {
     "recommendations/manga",
     "entry"
   );
-  recommendedManga = {data: recommendedManga.slice(0, 8)}
+  recommendedManga = reproduce(recommendedManga, 8)
 
   return (
     <>
@@ -21,6 +21,7 @@ const Home = async () => {
         />
         <MangaList api={topManga} />
       </div>
+
       <div className="p-2">
         <Header
           title={"Manga Recommendation"}
